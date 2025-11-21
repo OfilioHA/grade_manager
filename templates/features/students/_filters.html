@@ -1,0 +1,32 @@
+
+
+<form 
+  method="get" 
+  action="{{ url_for('students.pagination') }}" 
+  autocomplete="off"
+  data-turbo-frame="students-table"
+>
+  <input type="hidden" name="page" value="1">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="from-group">
+        <label for="gender" class="form-label">Sexo</label>
+        <select id="gender" name="filter[gender]" class="form-control">
+          <option value="">Todos</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <div class="from-group">
+          <label for="search" class="form-label">Buscador</label>
+          <input type="search" name="filter[search]" class="form-control" placeholder="Buscar..." value="">
+        </div>
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+  </div>
+</form>

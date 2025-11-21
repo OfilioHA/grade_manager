@@ -1,5 +1,0 @@
-{% from "partials/students/form.html" import student_form %}
-
-<turbo-frame id="student-create-form">
-    {{ student_form(url=url_for('students.store'), method='POST', form=form) }}
-</turbo-frame>

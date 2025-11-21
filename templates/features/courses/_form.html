@@ -1,0 +1,21 @@
+{% from "utils/macros/_form.html" import form_field, form_submit, form_field_check %}
+
+<form method="POST" action="{{action}}" novalidate>
+    {{ form.hidden_tag() }} 
+    <fieldset>
+        <legend>Información General</legend>
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_field(form.title) }}
+                {{ form_field(form.support_file) }}
+                {{ form_field_check(form.status) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_field(form.description) }}
+            </div>
+        </div>
+    </fieldset>
+    <div class="d-flex justify-content-end mt-3">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+</form>

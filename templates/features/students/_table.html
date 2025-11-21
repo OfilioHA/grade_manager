@@ -1,0 +1,40 @@
+{% from "utils/macros/_pagination.html" import create_pagination %}
+
+<turbo-frame id="students-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identificación</th>
+                <th>Nombre Completo</th>
+                <th>Estado</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students.items %}
+                <tr>
+                    <td  style="width: 150px;">{{student.identification}}</td>
+                    <td>{{student.get_fullname()}}</td>
+                    <th></th>
+                    <th style="width: 180px;" class="text-center">
+                        <a 
+                            href="{{ url_for('students.edit', id=student.id) }}" 
+                            class="btn btn-outline-success"
+                            data-turbo="false"
+                        >
+                            Editar
+                        </a>
+                        <a 
+                            href="{{ url_for('students.destroy', id=student.id) }}" 
+                            class="btn btn-outline-danger"
+                            data-turbo="false"
+                        >
+                            Eliminar
+                        </a>
+                    </th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {{create_pagination(students, "students.pagination", params)}}
+</turbo-frame>

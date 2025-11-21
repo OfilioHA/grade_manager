@@ -1,0 +1,13 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Listado de Cursos</h1>
+    <hr>
+    <div class="mb-3">
+        <a href="{{ url_for('courses.create') }}" class="btn btn-primary">
+            Crear Curso
+        </a>
+    </div>
+</div>
+{% endblock %}

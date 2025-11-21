@@ -1,0 +1,16 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Listado de Estudiantes</h1>
+    <hr>
+    <div class="mb-3">
+        <a href="{{ url_for('students.create') }}" class="btn btn-primary">
+            Crear Estudiante
+        </a>
+    </div>
+    {% include 'features/students/_filters.html' %}
+    <turbo-frame id="students-table" src="{{ url_for('students.pagination') }}">
+    </turbo-frame>
+</div>
+{% endblock %}

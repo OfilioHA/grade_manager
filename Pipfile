@@ -11,6 +11,8 @@ flask-wtf = "*"
 flask-login = "*"
 pytest = "*"
 pytest-flask = "*"
+faker = "*"
+turbo-flask = "*"
 
 [dev-packages]
 
